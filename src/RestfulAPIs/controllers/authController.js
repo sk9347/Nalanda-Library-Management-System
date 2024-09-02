@@ -1,5 +1,5 @@
-const { jwtSign } = require("../JwtStrategy/JwtSign");
-const User = require("../models/User");
+const { jwtSign } = require("../../JwtStrategy/JwtSign");
+const User = require("../../models/User");
 
 const register = async (userData) => {
   const { name, email, password, role } = userData;
@@ -20,8 +20,7 @@ const login = async (email, password) => {
     throw new Error("Invalid credentials");
   }
 
-  const token=await jwtSign(user._id,user.role)
-  
+  const token = await jwtSign(user._id, user.role);
 
   return { token };
 };

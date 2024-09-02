@@ -1,5 +1,5 @@
-const Borrow = require("../models/Borrow");
-const Book = require("../models/Book");
+const Borrow = require("../../models/Borrow");
+const Book = require("../../models/Book");
 
 class BorrowService {
   async borrowBook(userId, bookId) {

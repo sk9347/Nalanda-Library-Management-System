@@ -1,13 +1,11 @@
 const jwt = require("jsonwebtoken");
 
-const jwtSign= async(id,role)=>{
-    const token = jwt.sign(
-        { id: id, role:role},
-        process.env.JWT_SECRET,
-        { expiresIn: "8h" }
-      );
+const jwtSign = async (id, role) => {
+  const token = jwt.sign({ id: id, role: role }, process.env.JWT_SECRET, {
+    expiresIn: "8h",
+  });
 
-    return token
-}
+  return token;
+};
 
-module.exports={jwtSign}
+module.exports = { jwtSign };

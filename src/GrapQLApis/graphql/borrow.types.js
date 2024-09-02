@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type Borrow {
@@ -22,7 +22,7 @@ const typeDefs = gql`
   type Query {
     getBorrowHistory(userId: ID!): [Borrow]
     mostBorrowedBooks: [Book]
-    activeMembers:[ActiveMember]
+    activeMembers: [ActiveMember]
   }
 
   type Mutation {

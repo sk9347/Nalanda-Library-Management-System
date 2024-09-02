@@ -1,13 +1,19 @@
-const bookService = require('../services/book.service');
-const CustomError = require('../utils/costomError');
+const bookService = require("../services/book.service");
+const CustomError = require("../../utils/costomError");
 
 const resolvers = {
   Query: {
-    getBooks: async (_, { genre, author,title, page = 1, limit = 10 }) => {
+    getBooks: async (_, { genre, author, title, page = 1, limit = 10 }) => {
       try {
         const pageNumber = page > 0 ? page : 1;
         const limitNumber = limit > 0 ? limit : 10;
-        return await bookService.getBooks({ genre, author,title, page: pageNumber, limit: limitNumber });
+        return await bookService.getBooks({
+          genre,
+          author,
+          title,
+          page: pageNumber,
+          limit: limitNumber,
+        });
       } catch (error) {
         throw new CustomError(error.message, error.code || 500);
       }

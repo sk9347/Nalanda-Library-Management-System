@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const authService=require('../controllers/authController')
+const authService = require("../controllers/authController");
 
-router.post('/register', async (req, res) => {
+router.post("/register", async (req, res) => {
   try {
     const result = await authService.register(req.body);
     res.status(201).json(result);
@@ -11,7 +11,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-router.post('/login', async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     const result = await authService.login(req.body.email, req.body.password);
     res.json(result);

@@ -1,4 +1,4 @@
-const { gql} = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type Book {
@@ -12,10 +12,10 @@ const typeDefs = gql`
     borrowedCount: Int!
   }
 
-  type AvailableBooks{
-    totalBooks:Int, 
-    borrowedBooks: Int, 
-    availableBooks:Int
+  type AvailableBooks {
+    totalBooks: Int
+    borrowedBooks: Int
+    availableBooks: Int
   }
 
   input BookInput {
@@ -28,18 +28,18 @@ const typeDefs = gql`
   }
 
   input UpdateBookInput {
-    title: String                      
-    author: String                     
-    isbn: String                       
-    publicationDate: String            
-    genre: String                      
-    numberOfCopies: Int                
+    title: String
+    author: String
+    isbn: String
+    publicationDate: String
+    genre: String
+    numberOfCopies: Int
   }
 
   type Query {
     getBooks(genre: String, author: String, page: Int, limit: Int): [Book]
     getBookById(id: ID!): Book
-    bookAvailability:AvailableBooks
+    bookAvailability: AvailableBooks
   }
 
   type Mutation {

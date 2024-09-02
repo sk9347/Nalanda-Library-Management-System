@@ -1,4 +1,4 @@
-const borrowService = require('../services/borrow.service');
+const borrowService = require("../services/borrow.service");
 
 const resolvers = {
   Query: {

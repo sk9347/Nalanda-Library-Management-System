@@ -1,5 +1,5 @@
-const Book = require("../models/Book");
-const CustomError = require("../utils/costomError");
+const Book = require("../../models/Book");
+const CustomError = require("../../utils/costomError");
 
 class BookService {
   async getBooks({ genre, author, title, page, limit }) {
