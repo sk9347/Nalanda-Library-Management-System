@@ -36,7 +36,7 @@ startServer()
   .then(() => {
     app.listen(process.env.PORT, () => {
       console.log(
-        `Running a GraphQL API server at http://localhost:${process.env.PORT}/graphql`
+        `Running a GraphQL API server at http://localhost:${process.env.PORT}`
       );
     });
   })
