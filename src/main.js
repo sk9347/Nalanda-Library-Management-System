@@ -27,6 +27,8 @@ async function startServer() {
         throw new Error("Authentication required to access this GraphQL API");
       }
     },
+    introspection: true,
+    playground: true, 
   });
   await server.start();
   server.applyMiddleware({ app, path: "/graphql" });
